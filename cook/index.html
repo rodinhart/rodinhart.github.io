@@ -2,10 +2,67 @@
 <head>
   <meta charset="utf-8" />
   <title>Cook</title>
+  <style>
+    body {
+      color: #444444;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 180%;
+    }
+
+    p {
+      margin: 0px 0px 12px 0px;
+    }
+
+    .dish {
+      height: 800px;
+      position: relative;
+    }
+
+    .highlight {
+      color: #ff7f3f;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .ingredients {
+      font-weight: bold;
+      left: 0px;
+      position: absolute;
+      top: 50px;
+      width: 170px;
+    }
+
+    .recipe {
+      left: 200px;
+      position: absolute;
+      text-align: justify;
+      top: 50px;
+      width: 370px;
+    }
+  </style>
 </head>
 
 <body>
-  <ul>
+  <div class="dish">
+    <h1>cucumber salad</h1>
+    <div class="ingredients">
+      <p class="highlight">Serves 2 to 4</p>
+      <p>2 to 3 Persian cucumbers</p>
+      <p>Sea salt</p>
+      <p>&#x00bd clove garlic</p>
+      <p>2 tablespoons extra virgin olive oil</p>
+      <p>1 tablespoon red wine vinegar</p>
+      <p>Freshly ground black pepper</p>
+      <p>Good pinch of dried oregano</p>
+    </div>
+    <div class="recipe">
+      <p>This is another refreshing summer salad that my family has been making for generations.</p>
+      <p><span class="highlight">1.</span> With the tines of a fork, score the cucumbers to create some texture and then cut them crosswise into pennies. Put a pinch of salt in the bottom of a salad bowl and, using the garlic clove, rub it all over the bowl. Discard the garlic. Place the cucumber slices in the bowl.</p>
+      <p><span class="highlight">2.</span> In a small bowl, whisk together the olive oil, vinegar, a pinch of salt, and pepper until you have an emulsified dressing. Pour enough of it over the cucumbers to coat lightly. Sprinkle with the oregano and serve at once.</p>
+    </div>
+  </div>
+
   <li>goulash with fennel</li>
   <li>red cabbage</li>
   <li>cottage pie</li>
