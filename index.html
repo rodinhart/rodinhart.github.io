@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang='en-GB'>
+
 <head>
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width">
@@ -22,7 +23,7 @@
       padding: 0px;
       padding-top: 66px;
     }
-    
+
     #handle {
       color: #FFFFFF;
       position: absolute;
@@ -30,7 +31,7 @@
       text-decoration: none;
       top: 23px;
     }
-    
+
     html {
       width: 720px;
     }
@@ -55,7 +56,7 @@
       border-bottom: 1px solid #DDDDDD;
       padding: 16px 16px 0px 16px;
     }
-    
+
     #twitter {
       height: 34px;
       top: 16px;
@@ -84,7 +85,7 @@
     {{/each}}
   </script>
 
-  <script src="http://cdn.ractivejs.org/latest/ractive.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
   <script src="./lunr.min.js"></script>
   <script src="./app.bundle.js"></script>
 
@@ -93,7 +94,7 @@
 
     var code, index, lookup, markers, ractive;
 
-    index = lunr(function() {
+    index = lunr(function () {
       this.field('text');
       this.ref('id');
     });
@@ -101,7 +102,7 @@
     markers = [];
     lookup = {};
     for (code in bugles) {
-      bugles[code].markers.forEach(function(marker) {
+      bugles[code].markers.forEach(function (marker) {
         var t;
 
         t = {
@@ -129,14 +130,15 @@
 
       // Here, we're passing in some initial data
       data: {
+        find: "",
         markers: markers
       }
     });
 
-    ractive.observe('find', function(val, prev) { // vscroll = 0
+    ractive.observe('find', function (val, prev) { // vscroll = 0
       window.scrollTo(0, 0);
       if (val) {
-        ractive.set('markers', index.search(val).map(function(t) {
+        ractive.set('markers', index.search(val).map(function (t) {
           return lookup[t.ref];
         }));
       } else {
@@ -147,4 +149,5 @@
     document.getElementById('txtFind').focus();
   </script>
 </body>
+
 </html>
