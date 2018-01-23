@@ -17,6 +17,11 @@ body {
   width: 210mm;
 }
 
+a {
+  color: #444;
+  text-decoration: none;
+}
+
 #Name {
   font-size: 44pt;
   line-height: 1;
@@ -48,6 +53,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.2em;
   margin-bottom: 1.5mm;
+  margin-right: -0.2em;
   padding-bottom: 1.5mm;
   text-transform: uppercase;
 }
