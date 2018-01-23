@@ -10,8 +10,8 @@ html {
 body {
   background-color: #fff;
   border: 1px solid #ddd;
-  font-family: Constantia;
-  font-size: 10pt;
+  font-family: Times, sans-serif;
+  font-size: 11pt;
   height: 297mm;
   margin: auto;
   width: 210mm;
@@ -23,7 +23,7 @@ a {
 }
 
 #Name {
-  font-size: 44pt;
+  font-size: 48pt;
   line-height: 1;
   margin-top: 15mm;
   text-align: center;
