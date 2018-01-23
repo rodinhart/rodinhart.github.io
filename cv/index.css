@@ -1,0 +1,74 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+html {
+  background-color: #888;
+}
+
+body {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-family: Constantia;
+  font-size: 10pt;
+  height: 297mm;
+  margin: auto;
+  width: 210mm;
+}
+
+#Name {
+  font-size: 44pt;
+  line-height: 1;
+  margin-top: 15mm;
+  text-align: center;
+}
+
+#Title {
+  color: #888;
+  font-weight: bold;
+  letter-spacing: 0.6em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.HLine {
+  border-bottom: 0.7mm solid #eee;
+  margin: 5mm 0mm 10mm 0mm;
+  width: 190mm;
+}
+
+#Container {
+  display: flex;
+  width: 100%;
+}
+
+.Title {
+  border-bottom: 0.3mm solid #eee;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5mm;
+  padding-bottom: 1.5mm;
+  text-transform: uppercase;
+}
+
+.Content {
+  color: #444;
+}
+
+.Space {
+  margin-bottom: 7mm;
+}
+
+#Left {
+  border-right: 0.5mm solid #eee;
+  flex: 1;
+  padding: 0mm 10mm 0mm 15mm;
+  text-align: right;
+}
+
+#Right {
+  flex: 2;
+  padding: 0mm 15mm 0mm 10mm;
+  text-align: justify;
+}
