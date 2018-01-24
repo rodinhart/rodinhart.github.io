@@ -3,6 +3,17 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "Constantia";
+  src: url("./constan.ttf");
+}
+
+@font-face {
+  font-family: "Constantia";
+  font-weight: bold;
+  src: url("./constanb.ttf");
+}
+
 html {
   background-color: #888;
 }
