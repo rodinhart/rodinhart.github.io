@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("./proxima-nova-regular.ttf");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  src: url("./proxima-nova-bold.ttf");
+}
+
+html {
+  background-color: #888;
+  color: #444444;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: "Proxima Nova";
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+body {
+  margin: auto;
+  width: 210mm;
+}
+
+.Page {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  height: 210mm;
+  margin-top: 15mm;
+  padding: 10mm;
+}
+
+.Title {
+  font-size: 30pt;
+  font-weight: bold;
+  margin-bottom: 10mm;
+}
+
+.Dish {
+  display: flex;
+}
+
+.Side {
+  flex: 1;
+  font-weight: bold;
+}
+
+.Side div {
+  font-size: 0.9em;
+  margin-bottom: 3mm;
+}
+
+.Main {
+  flex: 3;
+  margin-left: 10mm;
+  text-align: justify;
+}
+
+.Main div {
+  margin-bottom: 5mm;
+}
+
+.Hi {
+  color: #ff7f3f;
+  font-weight: bold;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .Page {
+    margin-top: 0mm;
+    page-break-after: always;
+  }
+}
