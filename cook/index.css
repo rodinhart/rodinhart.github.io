@@ -23,12 +23,21 @@ body {
   width: 210mm;
 }
 
-.Page {
+.PageRight,
+.PageLeft {
   background-color: #fff;
-  height: 200mm;
+  height: 217mm;
   margin-top: 15mm;
-  padding: 10mm;
-  width: 200mm;
+  padding: 15mm;
+  width: 165mm;
+}
+
+.PageRight {
+  padding-left: 30mm;
+}
+
+.PageLeft {
+  padding-right: 30mm;
 }
 
 .Title {
@@ -41,16 +50,17 @@ body {
   display: flex;
 }
 
-.Side {
+.PageRight .Side,
+.PageLeft .Side {
   flex: 1;
   font-weight: bold;
 }
 
-.Odd {
+.PageRight .Side {
   margin-left: 10mm;
 }
 
-.Even {
+.PageLeft .Side {
   margin-right: 10mm;
 }
 
