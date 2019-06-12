@@ -9,12 +9,23 @@
   src: url("./proxima-nova-bold.ttf");
 }
 
+@font-face {
+  font-family: "IM Fell English";
+  font-weight: bold;
+  src: url("./FeENsc2.ttf");
+}
+
+@font-face {
+  font-family: "IM Fell English";
+  src: url("./FeENrm2.ttf");
+}
+
 html {
   background-color: #888;
   color: #444444;
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: "Proxima Nova";
-  font-size: 10.5pt;
+  font-size: 12.5pt;
   line-height: 1.5;
 }
 
@@ -40,37 +51,36 @@ body {
   padding-right: 30mm;
 }
 
-.Title {
-  font-size: 30pt;
-  font-weight: bold;
-  margin-bottom: 10mm;
-}
-
-.Dish {
+.Ingredients {
   display: flex;
-}
-
-.PageRight .Side,
-.PageLeft .Side {
-  flex: 1;
+  font-size: 0.9em;
   font-weight: bold;
 }
 
-.PageRight .Side {
-  margin-left: 10mm;
+.Ingredients div {
+  width: 50mm;
 }
 
-.PageLeft .Side {
-  margin-right: 10mm;
+.Ingredients .More {
+  border-right: 1px solid #ccc;
+  margin-right: 5mm;
+  padding-right: 5mm;
 }
 
-.Side div {
-  font-size: 0.9em;
+.Ingredients div div {
+  line-height: 1.2;
+  margin-top: 0mm;
   margin-bottom: 3mm;
 }
 
+.Title {
+  font-family: "IM Fell English";
+  font-size: 32pt;
+  font-weight: bold;
+  margin-top: 10mm;
+}
+
 .Main {
-  flex: 3;
   text-align: justify;
 }
 
