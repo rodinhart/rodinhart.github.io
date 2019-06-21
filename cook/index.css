@@ -74,7 +74,7 @@ body {
 }
 
 .Title {
-  /* font-family: "IM Fell English"; */
+  font-family: "IM Fell English";
   font-size: 32pt;
   font-weight: bold;
   line-height: 1;
@@ -104,7 +104,7 @@ body {
 }
 
 @page {
-  size: A4;
+  size: A5;
   margin: 0;
 }
 

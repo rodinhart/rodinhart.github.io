@@ -5,10 +5,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width">
   <title>Cook</title>
+  <script src="./jsedn.js"></script>
   <link href="./index.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+  <div id="container"></div>
+
   <div class="PageRight">
     <div class="Ingredients">
       <div class="More">
@@ -218,6 +221,29 @@
     <div class="Title">cookbook</div>
   </div>
 
+  <script>
+    (async function () {
+      const response = await fetch("recipes.clj")
+      const text = await response.text()
+      const recipes = jsedn.toJS(jsedn.parse(text))
+
+      // do left/right pages
+      document.getElementById("container").innerHTML = recipes.map(recipe => `
+        <div class="PageRight">
+          <div class="Ingredients">
+            ${recipe[":ingredients"].map((col, i, cols) => `
+              <div${i + 1 < cols.length ? ` class="More"` : ``}>
+                ${col.map(ingr => `<div>${ingr}</div>`).join("")}
+              </div>`).join("")}
+          </div>
+          <div class="Title">${recipe[":title"]}</div>
+          <div class="Main">
+            ${recipe[":method"].map(p => `<div>${p}</div>`).join(`<div class="HLine"></div>`)}
+          </div>
+        </div>
+      `)
+    })()
+  </script>
 </body>
 
 </html>
