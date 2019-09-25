@@ -2790,6 +2790,11 @@ module.exports = {
         min: 3,
         sec: 55,
         text: "captain Hefty, captain Power, sergeant Slaughter"
+      },
+      {
+        min: 28,
+        sec: 55,
+        text: "twerking, bootie clapping"
       }
     ]
   },
