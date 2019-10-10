@@ -21,11 +21,12 @@
         return a[":title"].localeCompare(b[":title"])
       })
       recipes.forEach(recipe => recipe[":id"] = String(Math.random()))
-      const len = Math.ceil(recipes.length / 3)
+      const distinct = recipes.filter(recipe => !recipe[":title"].match(/ $/))
+      const len = Math.ceil(distinct.length / 3)
       const columns = [
-        recipes.slice(0, len),
-        recipes.slice(len, 2 * len),
-        recipes.slice(2 * len)
+        distinct.slice(0, len),
+        distinct.slice(len, 2 * len),
+        distinct.slice(2 * len)
       ]
       recipes.unshift({
         ":title": "cookbook",
@@ -34,6 +35,7 @@
 
       // do left/right pages
       document.getElementById("container").innerHTML = recipes.map((recipe, i) => `
+      <a href="#" name="${recipe[":title"]}">
         <div class="${i % 2 ? "PageRight" : "PageLeft"}">
           <div class="Ingredients">
             ${(recipe[":ingredients"] || []).map((col, i, cols) => `
@@ -41,13 +43,12 @@
                 ${col.map(ingr => `<div>${ingr}</div>`).join("")}
               </div>`).join("")}
           </div>
-          <a href="#" name="${recipe[":title"]}">
-           <div class="Title">${recipe[":title"]}</div>
-          </a>
+           <div class="Title">${recipe[":title"].match(/ $/) ? "" : recipe[":title"]}</div>
           <div class="Main">
             ${(recipe[":method"] || []).map(p => `<div>${p}</div>`).join(`<div class="HLine"></div>`)}
           </div>
         </div>
+      </a>
       `).join("")
     })()
   </script>

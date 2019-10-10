@@ -142,7 +142,13 @@
     :title "bagels"
   }
   {
-    :title "pita breads"
+    :title "pita bread"
+    :ingredients [
+      ["250g strong flower" "7g dried yeast" "1 tsp salt" "160ml water" "2 tsp olive oil"]
+    ]
+    :method [
+      "makes 4/6. 250C."
+    ]
 
     :method [
       "Making pita breads is so easy, I wonder why I didn't tweak it before."
@@ -156,9 +162,49 @@
   }
   {
     :title "lemon tart"
+    :ingredients [
+      ["175g flour" "25g icing sugar" "100g butter, cold in small cubes" "1 egg yolk" "1 tbsp cold water"]
+      ["5 eggs" "5 lemons, zest and juice" "225g caster sugar" "125 double cream"]
+    ]
+    :method [
+      "This recipe is taken from Mary Berry, but I've added a lemon."
+      "Combine the flour, sugar and butter until it resembles breadcrumbs, either using a pulsing food processor or fingertips.
+      Add the yolk and water and, with as little kneading as possible, form a smooth disk. Chill in fridge for about 15 minutes.
+      Note that a disk is easier to roll out than a ball!"
+      "Grease a 23cm/9in loose-bottomed, fluted tart tin. Roll out the pasty to about the thickness of a pound coin, making sure it's
+      big enough to cover the base of the tin, the rim, plus a bit extra. Roll about half the pastry around the rolling pin, and slide
+      the tin underneath. Gently drop the pastry in the tin, as much centered as possible. Push the pastry carefully into the corner
+      where the base meets the rim. Using a little ball of pastry makes this easier. Chill in fridge for 30 minutes."
+
+    ]
+  }
+  {
+    :title "lemon tart "
+    :ingredients []
+    :method [
+      "Preheat the over to 200C. Line the pastry with baking paper or tin foil and weight down with baking beans.
+      Blind bake for 12-15 minutes, until the pastry is set. Lift out the paper or foil and beans. Trim the excess pastry with a 
+      sharp knife, keeping the pastry as high as possible. Return to oven for 10-12 minutes or until pale golden and completely dry.
+      Take care the pastry doesn't catch or gets too dark."
+      "Reduce over temperature to 170C. Breaks the eggs into a large bowl and whisk. Add the rest of the ingredient and mix
+      until well combined. Pour the filling into the pastry case, make sure it doesn't spill over the edge otherwise the case might
+      burn. Pouring half, then placing tin into the over and pouring the rest might help. Bake for 30-35 minutes or until just set with
+      a slight wobble."
+      "Cool before eating. Optionally dust with icing sugar and/or place some fresh raspberries on top."
+    ]
   }
   {
     :title "scones"
+    :ingredients [
+      ["225g self raising flour" "pinch of salt" "55g butter, cold in small cubes"]
+      ["25g caster sugar" "150ml milk" "egg or milk for glazing"]
+    ]
+    :method [
+      "Preheat to 220C. Prepare baking sheet with baking paper."
+      "Break egg and top up to 150ml, mix using whisk."
+      "Use 8cm/3in cutter."
+      "12-15 minutes."
+    ]
   }
   {
     :title "bloemkool schotel"
