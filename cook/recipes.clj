@@ -1,5 +1,45 @@
 [
   {
+    :title "brownies"
+
+    :ingredients [
+      ["200g chocolate" "200g butter" "3 large eggs" "300g granulated sugar"]
+      ["1 tbsp vanilla extract" "133g flour" "pinch of salt"]
+    ]
+
+    :method [
+      "Line a 25x25cm square tin with parchment paper."
+
+      "Melt the chocolate and butter together"
+    ]
+  }
+
+  {
+    :title "bloomer"
+
+    :ingredients [
+      ["250g wholemeal flour" "250g strong white flour" "7g sachet instant yeast" "10g salt"]
+      ["40ml olive oil" "320ml luke warm water"]
+    ]
+
+    :method [
+      "Mix the flours into a large bowl. Sprinkle the yeast on one side, olive oil
+      in the middle and salt on the other side of the bowl as to keep the salt away from
+      the yeast for as long as possible."
+
+      "Bring everything together by adding the water bit by bit, starting with the yeast side.
+      Once all the water has been added, tip the dough onto a floured surface and knead until
+      smooth and silky."
+
+      "Cover and leave to prove until tripple in size. Knock the dough back and shape into bloomer.
+      Put onto baking sheet with parchment paper, dust with flour and prove until doubled in size.
+      Preheat oven to 220C and place a tray with water at the bottom of the oven."
+
+      "Make four deep diagonal slashes across the bread and bake for 25 minutes. Lower the heat to
+      200C and bake for another 10. Cool on rack and slice once cooled."
+    ]
+  }
+  {
     :title "cheat's puff pastry"
 
     :ingredients [
