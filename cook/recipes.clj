@@ -171,6 +171,18 @@
   }
   {
     :title "snert (split pea soup)"
+    :ingredients [
+      ["250g green split peas" "1 onion, diced" "large potato, diced" "large carrot, diced"]
+      ["a leek, finely diced" "large celery stick, sliced" "smoked streaky bacon, diced" "smoked sausage, sliced"]
+    ]
+    :method [
+      "This lovely, thick soup, nearly a stew to be honest, is perfect for winter lunch or dinner."
+      "Cook the split peas in a litre of water until they start to fall apart. Mine never cook completely,
+      so I briefly use a hand blender at the end to help them along."
+      "Added the diced vegetables and bacon, and simmer until the potato is just tender.
+      Taste carefully and season with salt and pepper"
+      "If serving now, add the sausage to warm, otherwise cool the soup first before adding the sausage for storage."
+    ]
   }
   {
     :title "cabbage stirfry"
@@ -188,9 +200,6 @@
     ]
     :method [
       "makes 4/6. 250C."
-    ]
-
-    :method [
       "Making pita breads is so easy, I wonder why I didn't tweak it before."
     ]
   }
