@@ -15,6 +15,20 @@
   }
 
   {
+    :title "brownies alt"
+
+    :ingredients [
+      ["275g butter" "227g chocolate" "75g cacao powder"]
+      ["430g granulated sugar" "100g dark brown sugar" "2tsp vanilla extract"]
+      ["2tsp salt" "6 large eggs" "128g flour"]
+    ]
+
+    :method [
+      "9x13inch, 180C, 20min, lightly drop on surface, another 20 min"
+    ]
+  }
+
+  {
     :title "bloomer"
 
     :ingredients [
