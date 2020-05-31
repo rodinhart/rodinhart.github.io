@@ -158,6 +158,13 @@
   }
   {
     :title "apple pie"
+    :ingredients [
+      ["800g apples" "cinnamon" "castor sugar" "butter"]
+      ["190g flour" "140g butten" "1&#x00bd tbsp castor sugar" "4 to 5 tbsp cold water"]
+    ]
+  }
+  {
+    :title "dutch apple pie"
   }
   {
     :title "salami fried rice "
@@ -289,6 +296,13 @@
   }
   {
     :title "soda bread"
+    :ingredients [
+      ["300ml milk" "1tbsp lemon juice" "175g wholemeal flour"]
+      ["175g plain flour" "1tsb bicarbonate soda" "1tsp salt"]
+    ]
+    :method [
+      "200C, 30min"
+    ]
   }
   {
     :title "schichttorte"
