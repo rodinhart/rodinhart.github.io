@@ -297,8 +297,8 @@
   {
     :title "soda bread"
     :ingredients [
-      ["300ml milk" "1tbsp lemon juice" "175g wholemeal flour"]
-      ["175g plain flour" "1tsb bicarbonate soda" "1tsp salt"]
+      ["280ml milk" "1tbsp lemon juice" "180g wholemeal flour"]
+      ["180g plain flour" "1tsb bicarbonate soda" "1tsp salt"]
     ]
     :method [
       "200C, 30min"
