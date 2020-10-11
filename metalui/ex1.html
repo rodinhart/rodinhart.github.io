@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>metalui stateless example</title>
+    <meta charset="utf-8" />
+    <style>
+      .todo-list {
+        border: 1px solid #888;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"></div>
+    <script type="module">
+      import { createUid } from "./lang.js"
+      import { render, toxml } from "./metalui.js"
+
+      const List = ({ title, items }) => [
+        "div",
+        { class: "todo-list" },
+        ["div", {}, `${title} (${items.length})`],
+        ...items.map((item) => ["li", {}, item]),
+      ]
+
+      const main = async () => {
+        const items = ["Apples", "Bananas", "Chocolate"]
+
+        document.getElementById("main").innerHTML = toxml(
+          await render([List, { title: "Todo", items }]),
+          createUid(),
+          {}
+        )
+      }
+
+      main()
+    </script>
+  </body>
+</html>

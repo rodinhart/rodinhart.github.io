@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>metalui stateful example</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        user-select: none;
+      }
+
+      .todo-list {
+        border: 1px solid #888;
+        padding: 10px;
+      }
+
+      .todo-list li {
+        cursor: pointer;
+      }
+
+      .todo--selected {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"></div>
+    <script type="module">
+      import { createUid, disj, sleep } from "./lang.js"
+      import { render, toxml } from "./metalui.js"
+      import { Observable } from "./Observable.js"
+
+      // Some async data loading
+      const loadItems = async () => {
+        await sleep(42)
+
+        return ["Apples", "Bananas", "Chocolate"]
+      }
+
+      const List = async function* ({ stateOb }) {
+        // Some local state available while the component is alive
+        const onClick = (item) =>
+          stateOb.notify((state) => ({
+            ...state,
+            selected: state.selected.has(item)
+              ? disj(state.selected, item)
+              : new Set([...state.selected, item]),
+          }))
+
+        for await (const { selected } of stateOb) {
+          if (!selected) {
+            return // exit component
+          }
+
+          // Some async data loading
+          const items = await loadItems()
+
+          yield [
+            "div",
+            { class: "todo-list" },
+            [
+              "ul",
+              {},
+              ...items.map((item) => [
+                "li",
+                {
+                  class: selected.has(item) ? "todo--selected" : "",
+                  onclick: () => onClick(item),
+                },
+                item,
+              ]),
+            ],
+          ]
+        }
+      }
+
+      const main = async () => {
+        const stateOb = new Observable({
+          selected: new Set(["Bananas"]),
+        })
+
+        window.glob = {}
+        document.getElementById("main").innerHTML = toxml(
+          await render([List, { stateOb }]),
+          createUid(),
+          {}
+        )
+      }
+
+      main()
+    </script>
+  </body>
+</html>
