@@ -278,6 +278,20 @@
   }
   {
     :title "bloemkool schotel"
+    :ingredients [
+      ["400g mince beef" "onion" "1 clove of garlic" "&frac12; cauliflower" "small cucumber"]
+      ["small chinese cabbage" "1 tbsp curry powder" "&frac14; litre beef stock" "&frac12; litre cheese sauce"]
+    ]
+    :method [
+      "A bizzare recipe that includes cooked cucumber, curry AND cheese. But, very delicious."
+      "Brown the mince and diced onion in some oil. Add the crushed garlic. Cut the cauliflower into small florets and add, along with
+      the cucumber and chinese cabbage, both cut into pieces."
+      "Add the curry powder, and season with salt and pepper. Add the stock and simmer for about 10 minutes."
+      "Drain some of the liquid off and use it to make the cheese sauce. Using the existing liquid ensures the
+      whole dish doesn't get too wet. Put the meat and vegetables into an oven dish, cover with cheese sauce
+      and bake in the over until the top is nice and golden."
+      "Serve with plain rice."
+    ]
   }
   {
     :title "pasta"
