@@ -3256,6 +3256,16 @@ module.exports = {
       },
     ],
   },
+  4020: {
+    code: "4020",
+    markers: [
+      {
+        min: 7,
+        sec: 40,
+        text: "one-sided telephone conversation, plugging gigs",
+      },
+    ],
+  },
   4021: {
     code: "4021",
     markers: [
