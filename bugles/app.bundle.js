@@ -3276,6 +3276,26 @@ module.exports = {
       },
     ],
   },
+  4023: {
+    code: "4023",
+    markers: [
+      {
+        min: 32,
+        sec: 50,
+        text: "trump, cat amongst pigeons, wile e coyote, cern",
+      },
+    ],
+  },
+  4024: {
+    code: "4024",
+    markers: [
+      {
+        min: 20,
+        sec: 35,
+        text: "Alice Fraser, arbeit macht fries",
+      },
+    ],
+  },
   4057: {
     code: "4057",
     markers: [
