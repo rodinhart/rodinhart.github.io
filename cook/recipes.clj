@@ -18,13 +18,22 @@
     :title "brownies alt"
 
     :ingredients [
-      ["275g butter" "227g chocolate" "75g cacao powder"]
-      ["430g granulated sugar" "100g dark brown sugar" "2tsp vanilla extract"]
-      ["2tsp salt" "6 large eggs" "128g flour"]
+      ["175g butter" "150g chocolate" "75g cocoa powder" "1tbsp espresso powder"]
+      ["275g granulate sugar" "70g dark brown sugar" "1&frac12; vanilla extract" "1&frac12; salt"]
+      ["4 large eggs" "50g plain flower"]
     ]
 
     :method [
-      "9x13inch, 180C, 20min, lightly drop on surface, another 20 min"
+      "Line a 25x25cm square tin with parchment paper."
+
+      "Melt the butter, poor over chopped chocolate, the espresso powder and a third of the cocoa powder. Stir until well mixed and chocolate has melted."
+
+      "Combine sugars, vanilla, salt and eggs, and beat until fluffy."
+
+      "Add the ganache to it. Sift flour and rest of cocoa powder and fold in gently until well mixed."
+
+      "Poor in tin, bake for 15 minutes at 180C, take tin out and drop couple of times,
+      bake for 10 to 15 minutes more until just cooked, but still gooey once cooled."
     ]
   }
 

@@ -3295,6 +3295,36 @@ module.exports = {
       },
     ],
   },
+  4031: {
+    code: "4031",
+    markers: [
+      {
+        min: 31,
+        sec: 00,
+        text: "fan colour purple, ironic literary, niche joke, Nish loved it",
+      },
+    ],
+  },
+  4037: {
+    code: "4037",
+    markers: [
+      {
+        min: 8,
+        sec: 45,
+        text: "our parents are in, blame them, awkward christmas, we're jews",
+      },
+    ],
+  },
+  4039: {
+    code: "4039",
+    markers: [
+      {
+        min: 33,
+        sec: 10,
+        text: "right amount of hair, innovatively distributed",
+      },
+    ],
+  },
   4057: {
     code: "4057",
     markers: [
