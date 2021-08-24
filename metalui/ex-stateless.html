@@ -1,0 +1,13 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script>
+    (() => { "use strict"; const t = () => Math.random().toString(16).substr(2), r = t => new Promise(((r, e) => { setTimeout((() => { r(void 0) }), t) })), e = (() => { const t = document.createElement("div"); return r => (t.innerText = r, t.innerHTML) })(), n = (r, o = "GLOBAL", a = {}) => { if (Array.isArray(r)) { const [e, d, ...l] = r, m = (c = ([r, e]) => { if ("on" !== r.substr(0, 2)) return [r, e]; { const n = r + "-" + t(); return glob[o] = a, a[n] = t => e(t), [r, `glob['${o}']['${n}'](event)`] } }, i = (t, [r, e]) => (t[r] = e, t), s = {}, ((u = d).reduce ? u : Object.entries(u)).reduce(((t, r) => i(t, c(r))), s)), y = l.map((t => n(t, o, a))); return "Fragment" === e ? y.join("") : `<${e} ${Object.entries(m).map((([t, r]) => void 0 !== r ? `${t}="${r}"` : t)).join(" ")}>${y.join("")}</${e}>` } var i, s, c, u; return null === r ? "" : e(String(r)) }, o = async (e, a = {}) => { if (Array.isArray(e)) { const [i, s, ...c] = e, u = Object.entries(s).reduce(((t, [r, e]) => ("$" === r[0] && (t[r] = e), t)), { ...a }), d = []; try { for (const t of c) d.push(await o(t, u)) } catch (t) { if (s.errorBoundary) return s.errorBoundary; throw t } if ("string" == typeof i) return [i, s, ...d]; const l = i({ ...u, ...s, children: d }); if (null === l || "object" != typeof l || Array.isArray(l)) return await o(l, u); let m; const y = async t => { do { await r(0) } while (t && !document.getElementById(m)); const e = document.getElementById(m); if (!e) return void await l.return(); const a = await l.next(e); if (a.done) return; const i = await o(a.value, u); if (!Array.isArray(i)) throw new Error(`Expect component to rerender a tag, not ${i}`); const [s, c, ...d] = i; if (s !== e.tagName.toLowerCase()) throw new Error(`Expect component to rerender with tag ${e.tagName.toLowerCase()}, not tag ${s}`); Object.assign(e, c); const w = {}; e.innerHTML = d.map((t => n(t, m, w))).join(" "), y(!1) }, w = await l.next(); if (w.done) return null; const f = await o(w.value, u); if (!Array.isArray(f)) throw new Error(`Expect component to return a tag, not ${f}`); const [, g] = f; return m = g.id || t(), g.id = m, y(!0), f } return e }; Symbol.asyncIterator, (async () => { document.body.innerHTML = n(await o([({ title: t, items: r }) => ["div", {}, ["div", {}, `${t} (${r.length})`], ...r.map((t => ["li", {}, t]))], { title: "Todo", items: ["Apples", "Bananas", "Chocolate"] }])) })() })();
+  </script>
+</body>
+
+</html>
