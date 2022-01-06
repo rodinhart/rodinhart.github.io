@@ -316,6 +316,24 @@
   }
   {
     :title "oliebollen"
+    :ingredients [
+      ["500g plain flour" "1 sachet dried yeast (7g)" "2 tbsp sugar"]
+      ["about 900ml lukewarm water" "10g salt" "200g raisins"]
+      ["1l sunflower oil" "powdered sugar"]
+    ]
+    :method [
+      "You will also need a pan suitable for deep drying, a themometer, a slotted spoon and lots of kitchen paper.
+      Makes about 20."
+      "Put flour in large, non metal, bowl. Make a hole in the centre, put in the yeast and some water to create paste to activate yeast.
+       Leave for a few minutes. Soak the raisins in hot water.
+       Add sugar around the centre and salt at the edge. Add rest of water while adding rest of water until you have a thick batter.
+       Mix for 5 to 10 minutes by hand or using dough hook on (standing) mixer. Drain the raisins and mix gently through the batter.
+       Cover the bowl and leave to proof until doubled in size, about 45 minutes."
+      "Heat the oil to 190C. Using two spoons gently lower roughly round dollops into the oil, making sure not to overcrowd the oliebollen.
+       After a few minutes the balls should automatically turn over. Fry for another few minutes until medium brown. Move using slotted spoon into
+       collander, then onto some kitchen paper to drain."
+      "Eat warm, or cold, sprinkle with powdered sugar to taste."
+    ]
   }
   {
     :title "soda bread"
