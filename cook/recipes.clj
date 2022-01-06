@@ -319,7 +319,7 @@
     :ingredients [
       ["500g plain flour" "1 sachet dried yeast (7g)" "2 tbsp sugar"]
       ["about 900ml lukewarm water" "10g salt" "200g raisins"]
-      ["1l sunflower oil" "powdered sugar"]
+      ["1.5l sunflower oil" "powdered sugar"]
     ]
     :method [
       "You will also need a pan suitable for deep drying, a themometer, a slotted spoon and lots of kitchen paper.
@@ -365,5 +365,18 @@
   }
   {
     :title "stained glass biscuits"
+  }
+  {
+    :title "french fries"
+    :ingredients [
+      ["700g potatoes" "1l sunflower oil"]
+    ]
+    :method [
+      "Optionally peel the potatoes, and slice into fries of 1cm by 1cm. Soak in cold water for 30 minutes, then drain and dry well
+       using kitchen towel and/or kitchen paper."
+      "Heat the oil to 140C and fry the fries in small batches until just getting some colour. Drain in colander, then on kitchen paper."
+      "Heat the oil to 190C and fry the fries for the last time until golden."
+      "Trick is not to have the fries go too dark, but still be cooked inside."
+    ]
   }
 ]
