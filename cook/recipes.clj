@@ -182,9 +182,6 @@
     :title "chili, broccoli, feta and sausage"
   }
   {
-    :title "quiche"
-  }
-  {
     :title "chicken, white wine and mushrooms"
   }
   {
@@ -377,6 +374,25 @@
       "Heat the oil to 140C and fry the fries in small batches until just getting some colour. Drain in colander, then on kitchen paper."
       "Heat the oil to 190C and fry the fries for the last time until golden."
       "Trick is not to have the fries go too dark, but still be cooked inside."
+    ]
+  }
+
+  {
+    :title "quiche"
+    :ingredients [
+      ["250g plain flour" "125g plant butter" "67ml cold water" "pinch of salt"]
+      ["1 onion, diced" "1tsp smoked paprika powder" "&#x00bd-1tsp chilli flakes" "2 medium leeks, sliced thinly" "200g spinach" "2 cloves of garlic"]
+      ["45g raw cashew nuts" "2tsp yeast flakes" "175g silken tofu" "175ml oat milk"]
+    ]
+    :method [
+      "Make the pâte sablée. Keep as disk in the fridge to rest."
+      "Gently fry onion, add spices, add leek, add spinach. Make sure the filling
+       is not too wet. Let it cool, then chill in the fridge."
+      "Roll out the pastry and line the tin. Rest again, then blind bake at 180C in about 20 minutes
+      taking out the baking beans and trimming the pastry halfway through."
+      "Put the cashews and yeast flakes into food processor to create a powder.
+       Add tofu and milk, blitz again to create smooth mixture."
+      "Put vegetable mixture in pastry case, pour liquid mixture over the top. Bake for 40-45 minutes."
     ]
   }
 ]
