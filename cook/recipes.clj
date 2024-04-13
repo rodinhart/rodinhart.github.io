@@ -395,4 +395,23 @@
       "Put vegetable mixture in pastry case, pour liquid mixture over the top. Bake for 40-45 minutes."
     ]
   }
+
+  {
+    :title "chorizo"
+    :ingredients [
+      ["&#x00bd medium onion" "8 cloves of garlic, pressed" "20g dry soy mince" "2tbsp soy sauce"]
+      ["60ml water" "4tbsp smoked paprika" "4tsp mixed herbs" "1tsp salt"]
+      ["&#x00bdtsp cayenne pepper" "&#x00bdtsp black pepper" "100g vital wheat gluten"]
+    ]
+    :method [
+      "Gently fry onion. Add garlic."
+      "Transfer to mixing bowl. Add dry soy mince, soy sauce and water. Mix.
+       Add smoked paprike, herbs, salt, cayenne pepper and black pepper. Mix again."
+      "Add and stir in the vital wheat gluten, until it is all absorbed by the moist mixture.
+       Knead a bit to compact the dough as it comes together."
+      "Shape into 2 sausages, wrap in parchment paper (20x25cm each), tight.
+       Twist paper on one end, bind with string. Press mixture then twist other end, tie."
+      "Steam for one hour. Before unwrapping, let cool completely to firm up."
+    ]
+  }
 ]
