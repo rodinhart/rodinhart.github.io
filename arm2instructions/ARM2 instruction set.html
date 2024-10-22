@@ -1,0 +1,366 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: Consolas;
+        font-size: 10px;
+        transform: scale(1, 0.95);
+      }
+
+      .Title {
+        font-family: Impact;
+        font-size: 46px;
+        font-weight: normal;
+      }
+
+      .Columns {
+        display: flex;
+        gap: 16px;
+      }
+
+      .Row {
+        align-items: start;
+        display: flex;
+        gap: 10px;
+        padding-top: 8px;
+        margin-bottom: 18px;
+      }
+
+      .Header {
+        align-items: end;
+        border-bottom: 1px solid black;
+        border-top: 2px solid black;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .NameDescription {
+        position: relative;
+        width: 100px;
+      }
+
+      .Name {
+        top: -22px;
+        font-size: 20px;
+        font-weight: bold;
+        position: absolute;
+      }
+
+      .Modes {
+        width: 154px;
+      }
+
+      .Status {
+        width: 82px;
+      }
+
+      .Legend {
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .Aside {
+        font-size: 9px;
+        margin-left: 3px;
+        margin-top: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Columns" style="border-bottom: 2px solid black">
+      <div>
+        <div class="Title">ARM2 Instructions</div>
+        <div class="Row Header">
+          <div class="NameDescription">Name and<br />description</div>
+          <div class="Modes">Addressing modes</div>
+          <div class="Status">Status<br /><span>N Z C V I F</span></div>
+        </div>
+        <div id="data0"></div>
+      </div>
+      <div>
+        <br />
+        <span class="Legend">Inspired by 6502 Instructions by Beagle Bros</span
+        ><br /><br />
+        Any instruction can be conditional, e.g. MOVEQ R0, R1<br />
+        Some instructions can optionally update the<br />status flags, e.g. ADDS
+        R0, R1, R2<br />
+        Use ! to update Rn when pre-indexing, e.g. LDR R0, [R1, #4]!
+
+        <br /><br />
+        <div class="Columns">
+          <div>
+            <span class="Legend">Status</span><br />
+            <b>*</b> may change<br />
+            <b>_</b> no change<br />
+            <b>X</b> scrambled<br />
+            <br />
+            <span class="Legend">Conditions</span><br />
+            AL CC CS EQ<br />
+            GE GT HI LE<br />
+            LS LT MI NE<br />
+            NV PL VC VS
+          </div>
+          <div>
+            <span class="Legend">Abbreviations</span><br />
+            <b>Rd, Rn, Rm, Rs</b> any register<br />
+            <b>#imm</b> signed expression shiftable<br />into an 8-bit value<br />
+            <b>shift</b> any of ASL, LSL, LSR, ASR or ROR<br />
+            <b>cnt</b> shift count in range of 1..31<br />
+            <b>addr</b> 26 bit address<br />
+            <b>reg_list</b> e.g. R2, R4-R6<br />
+            <b>off</b> offset in range of -4095..4095
+          </div>
+        </div>
+        <div class="Row Header">
+          <div class="NameDescription">Name and<br />description</div>
+          <div class="Modes">Addressing modes</div>
+          <div class="Status">Status<br /><span>N Z C V I F</span></div>
+        </div>
+        <div id="data1"></div>
+      </div>
+    </div>
+
+    <script type="module">
+      const data = [
+        [
+          [
+            "ADC",
+            "Arithmetic add with carry",
+            `ADC Rd, Rn, #imm
+             ADC Rd, Rn, Rm
+             ADC Rd, Rn, Rm shift #cnt
+             ADC Rd, Rn, Rm shift Rs
+             ADC Rd, Rn, Rm RRX`,
+            "* * * * _ _ (if S)",
+          ],
+          [
+            "ADD",
+            "Arithmetic add",
+            `ADD Rd, Rn, #imm
+             ADD Rd, Rn, Rm
+             ADD Rd, Rn, Rm shift #cnt
+             ADD Rd, Rn, Rm shift Rs
+             ADD Rd, Rn, Rm RRX`,
+            "* * * * _ _ (if S)",
+          ],
+          [
+            "AND",
+            "Logical AND",
+            `AND Rd, Rn, #imm
+             AND Rd, Rn, Rm
+             AND Rd, Rn, Rm shift #cnt
+             AND Rd, Rn, Rm shift Rs
+             AND Rd, Rn, Rm RRX`,
+            "* * * _ _ _ (if S)",
+          ],
+          ["B", "Branch", `B addr`, "_ _ _ _ _ _"],
+          [
+            "BIC",
+            "Bit clear",
+            `BIC Rd, Rn, #imm
+             BIC Rd, Rn, Rm
+             BIC Rd, Rn, Rm shift #cnt
+             BIC Rd, Rn, Rm shift Rs
+             BIC Rd, Rn, Rm RRX`,
+            "* * * _ _ _ (if S)",
+          ],
+          ["BL", "Branch with link (R14 ← PC)", `BL addr`, "_ _ _ _ _ _"],
+          [
+            "CMN",
+            "Set negative compare",
+            `CMN Rn, #imm
+             CMN Rn, Rm
+             CMN Rn, Rm shift #cnt
+             CMN Rn, Rm shift Rs
+             CMN Rn, Rm RRX`,
+            "* * * * _ _",
+          ],
+          [
+            "CMP",
+            "Arithmetic comparison",
+            `CMP Rn, #imm
+             CMP Rn, Rm
+             CMP Rn, Rm shift #cnt
+             CMP Rn, Rm shift Rs
+             CMP Rn, Rm RRX`,
+            "* * * * _ _",
+          ],
+          [
+            "EOR",
+            "Logical exclusive OR",
+            `EOR Rd, Rn, #imm
+             EOR Rd, Rn, Rm
+             EOR Rd, Rn, Rm shift #cnt
+             EOR Rd, Rn, Rm shift Rs
+             EOR Rd, Rn, Rm RRX`,
+            "* * * _ _ _ (if S)",
+          ],
+          [
+            "LDM",
+            "Load multiple registers",
+            `LDMmode Rn, { reg_list }`,
+            "_ _ _ _ _ _",
+          ],
+          [
+            "LDR",
+            "Load register from memory",
+            `LDR Rd, [Rn, #off]
+             LDR Rd, [Rn, Rm]
+             LDR Rd, [Rn, Rm shift #cnt]
+             LDR Rd, [Rd], #off
+             LDR Rd, [Rd], Rm
+             LDR Rd, [Rd], Rm shift #cnt`,
+            "_ _ _ _ _ _",
+          ],
+          [
+            "MLA",
+            "Multiply and accumulate",
+            `MLA Rd, Rm, Rs, Rn`,
+            "* * X _ _ _ (if S)",
+          ],
+          [
+            "MOV",
+            "Move register or constant",
+            `MOV Rd, #imm
+             MOV Rd, Rm
+             MOV Rd, Rm shift #cnt
+             MOV Rd, Rm shift Rs
+             MOV Rd, Rm RRX`,
+            "* * * _ _ _ (if S)",
+          ],
+          ["MUL", "Multiply", `MUL Rd, Rm, Rs`, "* * X _ _ _ (if S)"],
+        ],
+        [
+          [
+            "MVN",
+            "Move complement of register",
+            `MVN Rd, #imm
+             MVN Rd, Rm
+             MVN Rd, Rm shift #cnt
+             MVN Rd, Rm shift Rs
+             MVN Rd, Rm RRX`,
+            "* * * _ _ _ (if S)",
+          ],
+          [
+            "ORR",
+            "Logical OR",
+            `ORR Rd, Rn, #imm
+             ORR Rd, Rn, Rm
+             ORR Rd, Rn, Rm shift #cnt
+             ORR Rd, Rn, Rm shift Rs
+             ORR Rd, Rn, Rm RRX`,
+            "* * * _ _ _ (if S)",
+          ],
+          [
+            "RSB",
+            "Reverse-operand subtract",
+            `RSB Rd, Rn, #imm
+             RSB Rd, Rn, Rm
+             RSB Rd, Rn, Rm shift #cnt
+             RSB Rd, Rn, Rm shift Rs
+             RSB Rd, Rn, Rm RRX`,
+            "* * * * _ _ (if S)",
+          ],
+          [
+            "RSC",
+            "Reverse-operand subtract with carry",
+            `RSC Rd, Rn, #imm
+             RSC Rd, Rn, Rm
+             RSC Rd, Rn, Rm shift #cnt
+             RSC Rd, Rn, Rm shift Rs
+             RSC Rd, Rn, Rm RRX`,
+            "* * * * _ _ (if S)",
+          ],
+          [
+            "SBC",
+            "Subtract with carry",
+            `SBC Rd, Rn, #imm
+             SBC Rd, Rn, Rm
+             SBC Rd, Rn, Rm shift #cnt
+             SBC Rd, Rn, Rm shift Rs
+             SBC Rd, Rn, Rm RRX`,
+            "* * * * _ _ (if S)",
+          ],
+          [
+            "STM",
+            "Store multiple registers",
+            `STMmode Rn, { reg_list }`,
+            "_ _ _ _ _ _",
+          ],
+          [
+            "STR",
+            "Store register to memory",
+            `STR Rd, [Rn, #off]
+             STR Rd, [Rn, Rm]
+             STR Rd, [Rn, Rm shift #cnt]
+             STR Rd, [Rd], #off
+             STR Rd, [Rd], Rm
+             STR Rd, [Rd], Rm shift #cnt`,
+            "_ _ _ _ _ _",
+          ],
+          [
+            "SUB",
+            "Subtract",
+            `SUB Rd, Rn, #imm
+             SUB Rd, Rn, Rm
+             SUB Rd, Rn, Rm shift #cnt
+             SUB Rd, Rn, Rm shift Rs
+             SUB Rd, Rn, Rm RRX`,
+            "* * * * _ _ (if S)",
+          ],
+          ["SWI", "Software interrupt", `SWI operand`, "_ _ _ _ _ _"],
+          [
+            "TEQ",
+            "Set condition codes via XOR",
+            `TEQ Rn, #imm
+             TEQ Rn, Rm
+             TEQ Rn, Rm shift #cnt
+             TEQ Rn, Rm shift Rs
+             TEQ Rn, Rm RRX`,
+            "* * * _ _ _",
+          ],
+          [
+            "TST",
+            "Set condition codes via AND",
+            `TST Rn, #imm
+             TST Rn, Rm
+             TST Rn, Rm shift #cnt
+             TST Rn, Rm shift Rs
+             TST Rn, Rm RRX`,
+            "* * * _ _ _",
+          ],
+        ],
+      ]
+
+      for (let i = 0; i < 2; i++) {
+        document.getElementById(`data${i}`).innerHTML = data[i]
+          .map(([name, description, modes, status]) => {
+            return `
+            <div class="Row" style="margin-bottom: 20px;">
+              <div class="NameDescription">
+                <span class="Name">${name}</span class="Name">
+                <span class="Description">${description.replace(
+                  /\n/g,
+                  "<br />"
+                )}</span>
+              </div>
+              <div class="Modes">${modes
+                .split("\n")
+                .map((s) => s.trim())
+                .join("<br />")}
+              </div>
+              <div class="Status">${status
+                .replace("(", `<div class="Aside">(`)
+                .replace(")", `)</div>`)}
+              </div>
+            </div>`
+          })
+          .join("")
+      }
+    </script>
+  </body>
+</html>
