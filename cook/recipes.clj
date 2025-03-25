@@ -1,21 +1,6 @@
 [
   {
-    :title "brownies"
-
-    :ingredients [
-      ["200g chocolate" "200g butter" "3 large eggs" "300g granulated sugar"]
-      ["1 tbsp vanilla extract" "133g flour" "pinch of salt"]
-    ]
-
-    :method [
-      "Line a 25x25cm square tin with parchment paper."
-
-      "Melt the chocolate and butter together"
-    ]
-  }
-
-  {
-    :title "brownies alt"
+    :title "brownies (dairy)"
 
     :ingredients [
       ["175g butter" "150g chocolate" "75g cocoa powder" "1tbsp espresso powder"]
@@ -35,6 +20,10 @@
       "Poor in tin, bake for 15 minutes at 180C, take tin out and drop couple of times,
       bake for 10 to 15 minutes more until just cooked, but still gooey once cooled."
     ]
+  }
+
+  {
+    :title "brownies (vegan)"
   }
 
   {
@@ -141,9 +130,6 @@
     ]
   }
   {
-    :title "goulash with fennel"
-  }
-  {
     :title "red cabbage"
   }
   {
@@ -156,17 +142,7 @@
     :title "curly kale mash"
   }
   {
-    :title "leek and bacon pie"
-  }
-  {
     :title "roti"
-  }
-  {
-    :title "apple pie"
-    :ingredients [
-      ["800g apples" "cinnamon" "castor sugar" "butter"]
-      ["190g flour" "140g butten" "1&#x00bd tbsp castor sugar" "4 to 5 tbsp cold water"]
-    ]
   }
   {
     :title "dutch apple pie"
@@ -176,12 +152,6 @@
   }
   {
     :title "chili, broccoli, feta and sausage"
-  }
-  {
-    :title "chicken, white wine and mushrooms"
-  }
-  {
-    :title "brusselsprout stirfry"
   }
   {
     :title "pasta with spinash, garlic and parmasan"
@@ -208,13 +178,7 @@
     ]
   }
   {
-    :title "cabbage stirfry"
-  }
-  {
     :title "roti with chicken (pieces)"
-  }
-  {
-    :title "bagels"
   }
   {
     :title "pita bread"
@@ -299,13 +263,7 @@
     :title "pasta"
   }
   {
-    :title "egg fried rice"
-  }
-  {
-    :title "mince applepies"
-  }
-  {
-    :title "doughnuts"
+    :title "mince apple pies"
   }
   {
     :title "oliebollen"
@@ -339,25 +297,10 @@
     ]
   }
   {
-    :title "schichttorte"
-  }
-  {
-    :title "gnocco fritto"
-  }
-  {
-    :title "coc au bin"
-  }
-  {
-    :title "prue leith's stroopwafels"
-  }
-  {
-    :title "chicken leek pie"
+    :title "chicken pieces leek pie"
   }
   {
     :title "pizza"
-  }
-  {
-    :title "stained glass biscuits"
   }
   {
     :title "french fries"
@@ -423,6 +366,21 @@
       "Add the vanilla, flour and salt. There used to be an egg in the recipe, so slightly less flour may avoid it being too dry."
       "Add the chips, preferably dark chocolate. 200g is possibly too much."
       "Bake at 180C for 7 to 10 minutes. Take out of the oven, let set for a minute before transferring to cooling rack."
+    ]
+  }
+
+  {
+    :title "vietnamese coconut curry"
+    :ingredients [
+      ["2 tbsp minced lemongrass" "5 garlic cloves" "1 large shallot" "5 lime/lemon/bay leaves (optional)" "1 tbsp madras curry powder"]
+      ["1 carrot" "1 potato" "1/2 yellow onion" "400 ml coconut milk" "2 tsp stock powder" "firm tofu"]
+    ]
+    :method [
+      "Best made day before. Add any other vegetables like peppers, mange-tout, etc."
+      "Mince lemongrass, garlic, shallots. Sauté these aromatics for couple of minutes, add optional leaves."
+      "Add curry powder, gently fry for a minute."
+      "Slice and dice carrot, potate and onion. Add these together with coconut milk. Add stock powder. Let simmer until root vegetables are tender."
+      "Finish with any seasoning and/or little bit of sugar. Serve with rice and crispy fried tofu."
     ]
   }
 ]
