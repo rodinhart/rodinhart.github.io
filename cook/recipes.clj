@@ -95,7 +95,7 @@
 
       "Put the cabbage and apple in a large bowl. Drain the raisins and add to the bowl."
 
-      "In a separate bowl, mix equal amounts of mayonnaise and yogurt, about 3 tablespoons each. Add about a teaspoon
+      "In a separate bowl, mix equal amounts of vegan mayonnaise and yogurt, about 3 tablespoons each. Add about a teaspoon
         of curry powder
         and a pinch of cumin. Finally, mix the dressing into the big bowl."
 
@@ -146,21 +146,33 @@
   }
   {
     :title "dutch apple pie"
-  }
-  {
-    :title "salami fried rice "
+    :ingredients [
+      ["375gr plain flour" "250gr vegan butter" "100gr granulated sugar" "pinch of salt"]
+      ["about 1.5kg cooking apple" "about 100gr sugar" "2 tsp ground cinnamon" "50gr raisins"]
+    ]
+    :method [
+      "Soak the raisins in warm water. Peel and decore the apples and cut into pieces of about 1/2 inch."
+
+      "Put the flour, sugar and salt in a large bowl. Cut the butter into small pieces and add. Use tips of fingers
+       to rub butter into mixture until it resembles breadcrumbs. Lightly form into a ball, using small amounts of cold water
+       if needed. Rest in fridge for 30 minutes."
+
+      "Grease an 28? cm spring form pie tin and preheat oven to 175 deg."
+
+      "Roll out over half the dough to about 1cm thickness and use it to line the tin.
+       Add the filling as layer of apple, sprinkle of raisins, cinnamon and sugar to taste, layer of apple etc."
+
+       "Roll out rest of the dough to about 1cm thickness and use it to create a lattice pattern on top. Bake for about 45 minutes."
+    ]
   }
   {
     :title "chili, broccoli, feta and sausage"
   }
   {
-    :title "pasta with spinash, garlic and parmasan"
+    :title "pasta with spinash, garlic and grated cheese"
   }
   {
     :title "spelt tartlet"
-  }
-  {
-    :title "spiced chicken curry with yogurt"
   }
   {
     :title "snert (split pea soup)"
@@ -189,9 +201,6 @@
       "makes 4/6. 250C."
       "Making pita breads is so easy, I wonder why I didn't tweak it before."
     ]
-  }
-  {
-    :title "french toast with yogurt cream"
   }
   {
     :title "Crepe suzette"
@@ -232,14 +241,15 @@
   {
     :title "scones"
     :ingredients [
-      ["225g self raising flour" "pinch of salt" "55g butter, cold in small cubes"]
-      ["25g caster sugar" "150ml milk" "egg or milk for glazing"]
+      ["225g self raising flour" "pinch of salt" "25g caster sugar"]
+      ["55g vegan butter, cold in small cubes" "130ml oat or soy milk"]
     ]
     :method [
       "Preheat to 220C. Prepare baking sheet with baking paper."
-      "Break egg and top up to 150ml, mix using whisk."
-      "Use 8cm/3in cutter."
-      "12-15 minutes."
+      "Combine flour, salt and sugar. Add butter and use fingers to rub in the mixture until it resembles breadcrumbs.
+       Add the milk in small amounts, stirring the mixture gently until it comes together. There will probalby be a little milk left."
+      "Either roll out the dough to 1 inch thickness and use an 8cm/3in round cutter, or divide into six equal parts and shape discs by hand."
+      "Brush with left-over milk and bake for 12-15 minutes."
     ]
   }
   {
@@ -382,5 +392,17 @@
       "Slice and dice carrot, potate and onion. Add these together with coconut milk. Add stock powder. Let simmer until root vegetables are tender."
       "Finish with any seasoning and/or little bit of sugar. Serve with rice and crispy fried tofu."
     ]
+  }
+
+  {
+    :title "apple with crumble topping & melted chocolate"
+  }
+
+  {
+    :title "cinnamon buns"
+  }
+
+  {
+    :title "chinese leaf char grilled in soy"
   }
 ]
