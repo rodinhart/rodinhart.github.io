@@ -369,13 +369,12 @@
     :ingredients [
       ["125g butter, softened" "100g light brown sugar" "125g caster sugar"]
       ["1 tsp vanilla extract" "225g self-raising flour" "1/2 tsp salt"]
-      ["200g chocolate chips"]
+      ["100g chocolate chips"]
     ]
     :method [
-      "Cream the butter and the sugars."
-      "Add the vanilla, flour and salt. There used to be an egg in the recipe, so slightly less flour may avoid it being too dry."
-      "Add the chips, preferably dark chocolate. 200g is possibly too much."
-      "Bake at 180C for 7 to 10 minutes. Take out of the oven, let set for a minute before transferring to cooling rack."
+      "Cream the butter and the sugars. Add the vanilla, flour and salt. Add the chips, preferably dark chocolate."
+      "Create balls of about 50gr. Squash them slightly if you like a flatter cookie."
+      "Bake at 180C for about 10 minutes. Take out of the oven, let set for a minute before transferring to cooling rack."
     ]
   }
 
