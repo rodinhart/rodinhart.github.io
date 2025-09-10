@@ -4,9 +4,10 @@ There are some truly beautiful pieces of 6502 assembly out there. I'd thought I 
 
 There written for the BBC Basic assembler so they can be tested using bbcmic.ro, but generally do not make use of anything BBC Micro specific (like API calls).
 
+
 ## Square root of unsigned 16 bit number
 
-There are several places on the internet where this routine is listed, but it is a beaut. I won't go into the all the details of how to compute a square root, but to core is comparing what remains of the input number with something that evolves like so:
+There are several places on the internet where this routine is listed, but it is a beaut. I won't go into the all the details of how to compute a square root, but the core is comparing what remains of the input number with something that evolves like so:
 
 01000000 00000000
 0x010000 00000000
@@ -68,6 +69,7 @@ PRINT r n-r*r
 CALL sqrt
 PRINT ?root ?rem
 END
+
 
 ## Multiplication
 
@@ -183,3 +185,43 @@ NEXT
 PRINT
 NEXT
 END
+
+
+## Print unsigned byte
+
+This is a port of a routine from The C Programming Language (1st edition). This neat recursive approach avoids buffer wrangling, and handles not printing leading 0 elegantly:
+
+res = &70 : tmp = &71
+DIM code% 1023
+FOR p% = 0 TO 2 STEP 2
+P% = code%
+[OPT p%
+.prn_uint8
+ LDY #160      \ divide by 10, denominator can be at most 10 << 4
+ STY tmp
+ LDY #0        \ init result
+ STY res
+ LDY #5        \ at most 5 bit result, 255 / 10 = 25.5
+.loop
+ CMP tmp
+ BCC next      \ no subtract
+ SBC tmp       \ subtract
+.next
+ ROL res       \ shift in result bit
+ LSR tmp       \ shift denominator right
+ DEY
+ BNE loop
+ PHA           \ remember remainder
+ LDA res       \ higher order digits to do first?
+ BEQ end       \ no, last digit
+ JSR prn_uint8 \ recurse
+.end
+ PLA           \ restore remainder
+ CLC           \ convert to decimal digit
+ ADC #ASC "0"
+ JMP &FFEE     \ print digit
+ ]:NEXT
+ A% = 94
+ CALL prn_uint8
+ PRINT
+ END
