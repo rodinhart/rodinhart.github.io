@@ -1,62 +1,47 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <style>
-      body {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        font-family: sans-serif;
-      }
-
-      .main {
-        max-width: 720px;
-      }
-    </style>
   </head>
   <body>
-    <div class="main">
-      <h1>6502 gems</h1>
-      <p>
-        There are some truly beautiful pieces of 6502 assembly out there. I'd
-        thought I would collect a few here.
-      </p>
-      <p>
-        There written for the BBC Basic assembler so they can be tested using
-        bbcmic.ro, but generally do not make use of anything BBC Micro specific
-        (like API calls).
-      </p>
+    <pre>
+# 6502 gems
 
-      <h2>Square root of unsigned 16 bit number</h2>
-      <p>
-        There are several places on the internet where this routine is listed,
-        but it is a beaut. I won't go into the all the details of how to compute
-        a square root, but to core is comparing what remains of the input number
-        with something that evolves like so:
-      </p>
-      <pre>
-        01000000 00000000
-        0x010000 00000000
-        00xx0100 00000000
-        000xxx01 00000000
-        0000xxxx 01000000
-        ....
-      </pre>
-      <p>
-        The xx represents the root found so far, the 1 represents the digits to
-        test for. Maintaining this number could be costly, inserting a new
-        result bit on the right of xx, while keeping the 1 in the right place.
-        What the routine below does is put the xx-1 break on the byte boundary:
-      </p>
-      <pre>
-        00000000 01000000
-        0000000x 01000000
-        000000xx 01000000
-        ...
-      </pre>
-      In this representation, shifting in the result bit is trivial. It does
-      mean the remainer has to be shifted left two places to align. Here it is:
-      <pre>
+There are some truly beautiful pieces of 6502 assembly out there. I'd thought I
+would collect a few here.
+
+There written for the BBC Basic assembler so they can be tested using
+bbcmic.ro, but generally do not make use of anything BBC Micro specific (like
+API calls).
+
+## Square root of unsigned 16 bit number
+
+There are several places on the internet where this routine is listed, but it
+is a beaut. I won't go into the all the details of how to compute a square
+root, but to core is comparing what remains of the input number with something
+that evolves like so:
+
+01000000 00000000
+0x010000 00000000
+00xx0100 00000000
+000xxx01 00000000
+0000xxxx 01000000
+....
+
+
+The xx represents the root found so far, the 1 represents the digits to test
+for. Maintaining this number could be costly, inserting a new result bit on the
+right of xx, while keeping the 1 in the right place. What the routine below
+does is put the xx-1 break on the byte boundary:
+
+00000000 01000000
+0000000x 01000000
+000000xx 01000000
+...
+
+
+In this representation, shifting in the result bit is trivial. It does mean the
+remainer has to be shifted left two places to align. Here it is:
+
 numl = &70 : numh = &71 : root = &72 : rem = &73
 DIM code% 1023
 FOR p% = 0 TO 2 STEP 2
@@ -99,17 +84,15 @@ PRINT r n-r*r
 CALL sqrt
 PRINT ?root ?rem
 END
-      </pre>
 
-      <h2>Multiplication</h2>
-      <p>
-        This routine is listed in the excellent Acorn Electron User Guide (page
-        224). The elegance, and at the same time slight asymmetry, is the
-        shifting of a result bit into the carry at the end of the loop (ROR a),
-        which is then shifted into the result low byte at the start of the loop
-        (ROR b). Because of this a fixup of b is needed at the very end:
-      </p>
-      <pre>
+## Multiplication
+
+This routine is listed in the excellent Acorn Electron User Guide (page 224).
+The elegance, and at the same time slight asymmetry, is the shifting of a
+result bit into the carry at the end of the loop (ROR a), which is then shifted
+into the result low byte at the start of the loop (ROR b). Because of this a
+fixup of b is needed at the very end:
+
 a = &70 : b = &71 : r = &72
 DIM code% 1023
 FOR p% = 0 TO 2 STEP 2
@@ -138,12 +121,9 @@ CALL mul
 PRINT ?b OR 256 * ?r
 END
 
-      </pre>
-      <p>
-        The routine above only handles unsigned numbers, but can easily be
-        adapted to allow for a signed multiplicand.
-      </p>
-      <pre>
+The routine above only handles unsigned numbers, but can easily be adapted to
+allow for a signed multiplicand.
+
 a = &70 : b = &71 : r = &72
 DIM code% 1023
 FOR p% = 0 TO 2 STEP 2
@@ -176,31 +156,27 @@ IF res AND &8000 THEN res = res OR &FFFF0000
 PRINT res
 END
 
-      </pre>
 
-      <h2>Bayer 4x4 matrix</h2>
-      <p>
-        For ordered dithering, a Bayer matrix is required. Now, the most
-        efficient way is definitely a lookup table but I was interested in the
-        most elegant way to compute the matrix. The Bayer matrix is recursive
-        with the following transformation at each level:
-      </p>
-      <pre>
-        0 1  ->  0 2
-        2 3      3 1
-      </pre>
-      <p>Or, writting in binary:</p>
-      <pre>
-        00  01  ->  00  10
-        10  11      11  01
-      </pre>
-      <p>
-        The most significant bit is the exclusive OR of the two bits (X and Y),
-        the least significant bit is merely Y. The following code compute two
-        levels (4x4 matrix) but is easily changed to handle any number of
-        levels.
-      </p>
-      <pre>
+## Bayer 4x4 matrix
+
+For ordered dithering, a Bayer matrix is required. Now, the most efficient way
+is definitely a lookup table but I was interested in the most elegant way to
+compute the matrix. The Bayer matrix is recursive with the following
+transformation at each level:
+
+0 1  ->  0 2
+2 3      3 1
+
+Or, writting in binary:
+
+00  01  ->  00  10
+10  11      11  01
+
+
+The most significant bit is the exclusive OR of the two bits (X and Y), the
+least significant bit is merely Y. The following code compute two levels
+(4x4 matrix) but is easily changed to handle any number of levels.
+
 eor = &70 : y = &71
 DIM code% 1023
 FOR p% = 0 TO 2 STEP 2
@@ -233,7 +209,6 @@ NEXT
 PRINT
 NEXT
 END
-      </pre>
-    </div>
+    </pre>
   </body>
 </html>
