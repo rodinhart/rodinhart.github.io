@@ -404,4 +404,34 @@
   {
     :title "chinese leaf char grilled in soy"
   }
+
+  { 
+    :title "Fred's cucumber salad"
+    :ingredients [
+      ["1 cucumber" "small onion" "little bit of olive oil"]
+      ["good amount of vinegar" "something to sweeten" "salt"]
+      ["ground pepper" "sambal oelek" "eastern spices"]
+    ]
+    :method [
+      "Experiment with quantities, and what spices you might want to add."
+    ]
+  }
+
+  {
+    :title "Victoria sponge"
+    :ingredients [
+      ["300g self raising flour" "150g caster sugar" "50g light brown sugar" "⅔ tsp baking powder" "⅔ tsp bicarb"]
+      ["267ml milk" "117ml (107gr) vegtable oil" "1⅓ tsp vanilla extract" "⅔ tbsp white wine vinegar"]
+      ["50g butter" "117g icing sugar" "⅓tsp vanilla extract" "jam"]
+    ]
+    :method [
+      "Preheat oven to 180C. Grease two 8\"/20cm baking tins (putting baking paper at the bottom)."
+      "Mix the flour, sugars, baking powder and bicarb together."
+      "In a separate bowl mix together the milk, oil, vanilla and vinegar."
+      "Add the liquid to the dry ingredient, and mix as little as possible until just combined. Divide mixture over
+      the two tins."
+      "Bake to good light golden colour in about 20 minutes. Let cool on rack before applying butter cream and jam."
+      "For the butter cream, whisk the butter, icing sugar and vanilla extract until fluffy."
+    ]
+  }
 ]
