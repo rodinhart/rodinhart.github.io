@@ -1,0 +1,343 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <script type="module">
+      globalThis.handlers = {}
+
+      // Markup to xml string
+      const toXml = (node) => {
+        if (Array.isArray(node)) {
+          const [tag, props, ...children] = node
+
+          const attributes = Object.entries(props)
+            .map(([key, val]) => {
+              if (key === "style") {
+                val = Object.entries(val)
+                  .map(([key, val]) => `${key}: ${val};`)
+                  .join(" ")
+              } else if (key === "title") {
+                val = newlineTooltip(String(val ?? ""))
+              } else if (key.startsWith("on")) {
+                const id = Math.random().toString(16).slice(2)
+                handlers[id] = val
+                val = `handlers['${id}'](event)`
+              }
+
+              return ` ${key}=${JSON.stringify(String(val))}`
+            })
+            .join("")
+          const mapped = children.map(toXml).join("\n")
+
+          return `<${tag}${attributes}>${mapped}</${tag}>`
+        }
+
+        return String(node)
+      }
+
+      const render = () => {
+        const M = 0
+        const W = window.innerWidth - M
+        const H = window.innerHeight - M
+
+        const now = new Date()
+        const hour = now.getHours() % 12
+        const min = now.getMinutes()
+
+        const f = 36 / 6
+        const g = 8.5
+        const ON = "orange"
+        const OFF = "#666"
+
+        const root = [
+          "svg",
+          {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: Math.min(W, H),
+            height: Math.min(W, H),
+            "font-family": "Courier New",
+            "font-size": 10,
+            viewbox: `0 0 ${11 * f} ${9.4 * g}`,
+          },
+
+          // IT IS HALF
+          [
+            "text",
+            {
+              x: 0,
+              y: 1 * g,
+              fill: ON,
+            },
+            "IT IS",
+          ],
+          [
+            "text",
+            {
+              x: 7 * f,
+              y: 1 * g,
+              fill: min >= 30 && min < 35 ? ON : OFF,
+            },
+            "HALF",
+          ],
+
+          // TWENTY-FIVE
+          [
+            "text",
+            {
+              x: 0,
+              y: 2 * g,
+              fill:
+                (min >= 20 && min < 30) || (min >= 35 && min < 45) ? ON : OFF,
+            },
+            "TWENTY",
+          ],
+          [
+            "text",
+            {
+              x: 6 * f,
+              y: 2 * g,
+              fill:
+                (min >= 25 && min < 30) || (min >= 35 && min < 40) ? ON : OFF,
+            },
+            "-",
+          ],
+          [
+            "text",
+            {
+              x: 7 * f,
+              y: 2 * g,
+              fill:
+                (min >= 5 && min < 10) ||
+                min >= 55 ||
+                (min >= 25 && min < 30) ||
+                (min >= 35 && min < 40)
+                  ? ON
+                  : OFF,
+            },
+            "FIVE",
+          ],
+
+          // QUARTER TEN
+          [
+            "text",
+            {
+              x: 0,
+              y: 3 * g,
+              fill:
+                (min >= 15 && min < 20) || (min >= 45 && min < 50) ? ON : OFF,
+            },
+            "QUARTER",
+          ],
+          [
+            "text",
+            {
+              x: 8 * f,
+              y: 3 * g,
+              fill:
+                (min >= 10 && min < 15) || (min >= 50 && min < 55) ? ON : OFF,
+            },
+            "TEN",
+          ],
+
+          // PASTTO FOUR
+          [
+            "text",
+            {
+              x: 0,
+              y: 4 * g,
+              fill: min < 35 ? ON : OFF,
+            },
+            "PAST",
+          ],
+          [
+            "text",
+            {
+              x: 4 * f,
+              y: 4 * g,
+              fill: min >= 35 ? ON : OFF,
+            },
+            "TO",
+          ],
+          [
+            "text",
+            {
+              x: 7 * f,
+              y: 4 * g,
+              fill:
+                (hour === 4 && min <= 30) || (hour === 3 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "FOUR",
+          ],
+
+          // ONETWOTHREE
+          [
+            "text",
+            {
+              x: 0,
+              y: 5 * g,
+              fill:
+                (hour === 1 && min <= 30) || (hour === 12 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "ONE",
+          ],
+          [
+            "text",
+            {
+              x: 3 * f,
+              y: 5 * g,
+              fill:
+                (hour === 2 && min <= 30) || (hour === 1 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "TWO",
+          ],
+          [
+            "text",
+            {
+              x: 6 * f,
+              y: 5 * g,
+              fill:
+                (hour === 3 && min <= 30) || (hour === 2 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "THREE",
+          ],
+
+          // FIVESIXNINE
+          [
+            "text",
+            {
+              x: 0,
+              y: 6 * g,
+              fill:
+                (hour === 5 && min <= 30) || (hour === 4 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "FIVE",
+          ],
+          [
+            "text",
+            {
+              x: 4 * f,
+              y: 6 * g,
+              fill:
+                (hour === 6 && min <= 30) || (hour === 5 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "SIX",
+          ],
+          [
+            "text",
+            {
+              x: 7 * f,
+              y: 6 * g,
+              fill:
+                (hour === 9 && min <= 30) || (hour === 8 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "NINE",
+          ],
+
+          // TWELVESEVEN
+          [
+            "text",
+            {
+              x: 0,
+              y: 7 * g,
+              fill:
+                (hour === 12 && min <= 30) || (hour === 11 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "TWELVE",
+          ],
+          [
+            "text",
+            {
+              x: 6 * f,
+              y: 7 * g,
+              fill:
+                (hour === 7 && min <= 30) || (hour === 6 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "SEVEN",
+          ],
+
+          // EIGHTELEVEN
+          [
+            "text",
+            {
+              x: 0,
+              y: 8 * g,
+              fill:
+                (hour === 8 && min <= 30) || (hour === 7 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "EIGHT",
+          ],
+          [
+            "text",
+            {
+              x: 5 * f,
+              y: 8 * g,
+              fill:
+                (hour === 11 && min <= 30) || (hour === 10 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "ELEVEN",
+          ],
+
+          // TEN O'CLOCK
+          [
+            "text",
+            {
+              x: 0,
+              y: 9 * g,
+              fill:
+                (hour === 10 && min <= 30) || (hour === 9 && min > 30)
+                  ? ON
+                  : OFF,
+            },
+            "TEN",
+          ],
+          [
+            "text",
+            {
+              x: 4 * f,
+              y: 9 * g,
+              fill: min < 5 ? ON : OFF,
+            },
+            "O'CLOCK",
+          ],
+        ]
+
+        document.getElementById("clock").innerHTML = toXml(root)
+      }
+
+      render()
+      setInterval(() => {
+        render()
+      }, 1000)
+    </script>
+  </body>
+</html>
