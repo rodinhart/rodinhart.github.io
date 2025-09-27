@@ -44,18 +44,54 @@
       }
 
       const render = () => {
+        const now = new Date()
+        const min = now.getMinutes() - (now.getMinutes() % 5)
+        const seg = min > 30 ? 60 - min : min
+        let hour = seg < 35 ? now.getHours() : now.getHours() + 1
+        if (hour > 12) {
+          hour -= 12
+        }
+
+        const ON = "orange"
+        const OFF = "#666"
+        const data = [
+          ["IT", true],
+          ["R", false],
+          ["IS", true],
+          ["V", false],
+          ["HALF", seg === 30],
+          ["D", false],
+          ["TWENTY", seg === 20 || seg === 25],
+          ["H", false],
+          ["FIVE", seg === 5 || seg === 25],
+          ["QUARTER", seg === 15],
+          ["A", false],
+          ["TEN", seg === 10],
+          ["PAST", min >= 5 && min < 35],
+          ["TO", min >= 35],
+          ["R", false],
+          ["FOUR", hour === 4],
+          ["ONE", hour === 1],
+          ["TWO", hour === 2],
+          ["THREE", hour === 3],
+          ["FIVE", hour === 5],
+          ["SIX", hour === 6],
+          ["NINE", hour === 9],
+          ["TWELVE", hour === 12],
+          ["SEVEN", hour === 7],
+          ["EIGHT", hour === 8],
+          ["ELEVEN", hour === 11],
+          ["TEN", hour === 10],
+          ["T", false],
+          ["O'CLOCK", seg === 0],
+        ]
+
         const M = 0
         const W = window.innerWidth - M
         const H = window.innerHeight - M
 
-        const now = new Date()
-        const hour = now.getHours() % 12
-        const min = now.getMinutes()
-
-        const f = 36 / 6
-        const g = 8.5
-        const ON = "orange"
-        const OFF = "#666"
+        const dx = 36 / 6
+        const dy = 8.5
 
         const root = [
           "svg",
@@ -65,324 +101,24 @@
             height: Math.min(W, H),
             "font-family": "Courier New",
             "font-size": 10,
-            viewbox: `0 0 ${11 * f} ${9.4 * g}`,
+            viewbox: `0 0 ${11 * dx} ${9.4 * dy}`,
           },
-
-          // IT IS HALF
-          [
-            "text",
-            {
-              x: 0,
-              y: 1 * g,
-              fill: ON,
-            },
-            "IT IS",
-          ],
-          [
-            "text",
-            {
-              x: 2 * f,
-              y: 1 * g,
-              fill: OFF,
-            },
-            "R",
-          ],
-          [
-            "text",
-            {
-              x: 5 * f,
-              y: 1 * g,
-              fill: OFF,
-            },
-            "V",
-          ],
-          [
-            "text",
-            {
-              x: 6 * f,
-              y: 1 * g,
-              fill: min >= 30 && min < 35 ? ON : OFF,
-            },
-            "HALF",
-          ],
-          [
-            "text",
-            {
-              x: 10 * f,
-              y: 1 * g,
-              fill: OFF,
-            },
-            "D",
-          ],
-
-          // TWENTY-FIVE
-          [
-            "text",
-            {
-              x: 0,
-              y: 2 * g,
-              fill:
-                (min >= 20 && min < 30) || (min >= 35 && min < 45) ? ON : OFF,
-            },
-            "TWENTY",
-          ],
-          [
-            "text",
-            {
-              x: 6 * f,
-              y: 2 * g,
-              fill: OFF,
-            },
-            "H",
-          ],
-          [
-            "text",
-            {
-              x: 7 * f,
-              y: 2 * g,
-              fill:
-                (min >= 5 && min < 10) ||
-                min >= 55 ||
-                (min >= 25 && min < 30) ||
-                (min >= 35 && min < 40)
-                  ? ON
-                  : OFF,
-            },
-            "FIVE",
-          ],
-
-          // QUARTER TEN
-          [
-            "text",
-            {
-              x: 0,
-              y: 3 * g,
-              fill:
-                (min >= 15 && min < 20) || (min >= 45 && min < 50) ? ON : OFF,
-            },
-            "QUARTER",
-          ],
-          [
-            "text",
-            {
-              x: 7 * f,
-              y: 3 * g,
-              fill: OFF,
-            },
-            "A",
-          ],
-          [
-            "text",
-            {
-              x: 8 * f,
-              y: 3 * g,
-              fill:
-                (min >= 10 && min < 15) || (min >= 50 && min < 55) ? ON : OFF,
-            },
-            "TEN",
-          ],
-
-          // PASTTO FOUR
-          [
-            "text",
-            {
-              x: 0,
-              y: 4 * g,
-              fill: min >= 5 && min < 35 ? ON : OFF,
-            },
-            "PAST",
-          ],
-          [
-            "text",
-            {
-              x: 4 * f,
-              y: 4 * g,
-              fill: min >= 35 ? ON : OFF,
-            },
-            "TO",
-          ],
-          [
-            "text",
-            {
-              x: 6 * f,
-              y: 4 * g,
-              fill: OFF,
-            },
-            "R",
-          ],
-          [
-            "text",
-            {
-              x: 7 * f,
-              y: 4 * g,
-              fill:
-                (hour === 4 && min <= 30) || (hour === 3 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "FOUR",
-          ],
-
-          // ONETWOTHREE
-          [
-            "text",
-            {
-              x: 0,
-              y: 5 * g,
-              fill:
-                (hour === 1 && min <= 30) || (hour === 12 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "ONE",
-          ],
-          [
-            "text",
-            {
-              x: 3 * f,
-              y: 5 * g,
-              fill:
-                (hour === 2 && min <= 30) || (hour === 1 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "TWO",
-          ],
-          [
-            "text",
-            {
-              x: 6 * f,
-              y: 5 * g,
-              fill:
-                (hour === 3 && min <= 30) || (hour === 2 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "THREE",
-          ],
-
-          // FIVESIXNINE
-          [
-            "text",
-            {
-              x: 0,
-              y: 6 * g,
-              fill:
-                (hour === 5 && min <= 30) || (hour === 4 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "FIVE",
-          ],
-          [
-            "text",
-            {
-              x: 4 * f,
-              y: 6 * g,
-              fill:
-                (hour === 6 && min <= 30) || (hour === 5 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "SIX",
-          ],
-          [
-            "text",
-            {
-              x: 7 * f,
-              y: 6 * g,
-              fill:
-                (hour === 9 && min <= 30) || (hour === 8 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "NINE",
-          ],
-
-          // TWELVESEVEN
-          [
-            "text",
-            {
-              x: 0,
-              y: 7 * g,
-              fill:
-                (hour === 12 && min <= 30) || (hour === 11 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "TWELVE",
-          ],
-          [
-            "text",
-            {
-              x: 6 * f,
-              y: 7 * g,
-              fill:
-                (hour === 7 && min <= 30) || (hour === 6 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "SEVEN",
-          ],
-
-          // EIGHTELEVEN
-          [
-            "text",
-            {
-              x: 0,
-              y: 8 * g,
-              fill:
-                (hour === 8 && min <= 30) || (hour === 7 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "EIGHT",
-          ],
-          [
-            "text",
-            {
-              x: 5 * f,
-              y: 8 * g,
-              fill:
-                (hour === 11 && min <= 30) || (hour === 10 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "ELEVEN",
-          ],
-
-          // TEN O'CLOCK
-          [
-            "text",
-            {
-              x: 0,
-              y: 9 * g,
-              fill:
-                (hour === 10 && min <= 30) || (hour === 9 && min > 30)
-                  ? ON
-                  : OFF,
-            },
-            "TEN",
-          ],
-          [
-            "text",
-            {
-              x: 3 * f,
-              y: 9 * g,
-              fill: OFF,
-            },
-            "T",
-          ],
-          [
-            "text",
-            {
-              x: 4 * f,
-              y: 9 * g,
-              fill: min < 5 ? ON : OFF,
-            },
-            "O'CLOCK",
-          ],
         ]
+
+        let x = 0
+        let y = 1
+        for (const [text, on] of data) {
+          root.push([
+            "text",
+            { x: x * dx, y: y * dy, fill: on ? ON : OFF },
+            text,
+          ])
+          x += text.length
+          if (x === 11) {
+            x = 0
+            y++
+          }
+        }
 
         document.getElementById("clock").innerHTML = toXml(root)
       }
