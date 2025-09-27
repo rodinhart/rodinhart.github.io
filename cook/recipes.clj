@@ -3,8 +3,8 @@
     :title "brownies (dairy)"
 
     :ingredients [
-      ["175g butter" "150g chocolate" "75g cocoa powder" "1tbsp espresso powder"]
-      ["275g granulate sugar" "70g dark brown sugar" "1&frac12; vanilla extract" "1&frac12; salt"]
+      ["175g butter" "150g chocolate" "75g cocoa powder" "1 tbsp espresso powder"]
+      ["275g granulate sugar" "70g dark brown sugar" "1½ tsp vanilla extract" "1½ tsp salt"]
       ["4 large eggs" "50g plain flower"]
     ]
 
@@ -30,7 +30,7 @@
     :title "bloomer"
 
     :ingredients [
-      ["250g wholemeal flour" "250g strong white flour" "7g sachet instant yeast" "10g salt"]
+      ["250g wholemeal flour" "250g strong white flour" "7g dried yeast" "10g salt"]
       ["40ml olive oil" "320ml luke warm water"]
     ]
 
@@ -108,7 +108,7 @@
     :title "cucumber salad"
 
     :ingredients [
-      ["2 to 3 Persian cucumbers" "sea salt" "&#x00bd clove garlic"
+      ["2 to 3 Persian cucumbers" "sea salt" "½ clove garlic"
       "2 tbsp extra virgin olive oil"]
       ["1 tbsp red wine vingar" "Freshly ground black pepper"
       "Good pinch of dried oregano"]
@@ -147,8 +147,8 @@
   {
     :title "dutch apple pie"
     :ingredients [
-      ["375gr plain flour" "250gr vegan butter" "100gr granulated sugar" "pinch of salt"]
-      ["about 1.5kg cooking apple" "about 100gr sugar" "2 tsp ground cinnamon" "50gr raisins"]
+      ["375g plain flour" "250g vegan butter" "100g granulated sugar" "pinch of salt"]
+      ["about 1.5kg cooking apple" "about 100g sugar" "2 tsp ground cinnamon" "50g raisins"]
     ]
     :method [
       "Soak the raisins in warm water. Peel and decore the apples and cut into pieces of about 1/2 inch."
@@ -209,7 +209,7 @@
     :title "lemon tart"
     :ingredients [
       ["175g flour" "25g icing sugar" "100g butter, cold in small cubes" "1 egg yolk" "1 tbsp cold water"]
-      ["5 eggs" "5 lemons, zest and juice" "225g caster sugar" "125 double cream"]
+      ["5 eggs" "5 lemons, zest and juice" "225g caster sugar" "125ml double cream"]
     ]
     :method [
       "This recipe is taken from Mary Berry, but I've added a lemon."
@@ -255,8 +255,8 @@
   {
     :title "bloemkool schotel"
     :ingredients [
-      ["400g mince beef" "onion" "1 clove of garlic" "&frac12; cauliflower" "small cucumber"]
-      ["small chinese cabbage" "1 tbsp curry powder" "&frac14; litre beef stock" "&frac12; litre cheese sauce"]
+      ["400g mince beef" "onion" "1 clove of garlic" "½ cauliflower" "small cucumber"]
+      ["small chinese cabbage" "1 tbsp curry powder" "¼ litre beef stock" "½ litre cheese sauce"]
     ]
     :method [
       "A bizzare recipe that includes cooked cucumber, curry AND cheese. But, very delicious."
@@ -278,7 +278,7 @@
   {
     :title "oliebollen"
     :ingredients [
-      ["500g plain flour" "1 sachet dried yeast (7g)" "2 tbsp sugar"]
+      ["500g plain flour" "7g dried yeast" "2 tbsp sugar"]
       ["about 900ml lukewarm water" "10g salt" "200g raisins"]
       ["1.5l sunflower oil" "powdered sugar"]
     ]
@@ -348,9 +348,9 @@
   {
     :title "chorizo"
     :ingredients [
-      ["&#x00bd medium onion" "8 cloves of garlic, pressed" "20g dry soy mince" "2tbsp soy sauce"]
-      ["60ml water" "4tbsp smoked paprika" "4tsp mixed herbs" "1tsp salt"]
-      ["&#x00bdtsp cayenne pepper" "&#x00bdtsp black pepper" "100g vital wheat gluten"]
+      ["½ medium onion" "8 cloves of garlic, pressed" "20g dry soy mince" "2 tbsp soy sauce"]
+      ["60ml water" "4 tbsp smoked paprika" "4 tsp mixed herbs" "1 tsp salt"]
+      ["½ tsp cayenne pepper" "½ tsp black pepper" "100g vital wheat gluten"]
     ]
     :method [
       "Gently fry onion. Add garlic."
@@ -368,7 +368,7 @@
     :title "chocolate chip cookies"
     :ingredients [
       ["125g butter, softened" "100g light brown sugar" "125g caster sugar"]
-      ["1 tsp vanilla extract" "225g self-raising flour" "1/2 tsp salt"]
+      ["1 tsp vanilla extract" "225g self-raising flour" "½ tsp salt"]
       ["100g chocolate chips"]
     ]
     :method [
@@ -382,7 +382,7 @@
     :title "vietnamese coconut curry"
     :ingredients [
       ["2 tbsp minced lemongrass" "5 garlic cloves" "1 large shallot" "5 lime/lemon/bay leaves (optional)" "1 tbsp madras curry powder"]
-      ["1 carrot" "1 potato" "1/2 yellow onion" "400 ml coconut milk" "2 tsp stock powder" "firm tofu"]
+      ["1 carrot" "1 potato" "½ yellow onion" "400 ml coconut milk" "2 tsp stock powder" "firm tofu"]
     ]
     :method [
       "Best made day before. Add any other vegetables like peppers, mange-tout, etc."
@@ -395,10 +395,6 @@
 
   {
     :title "apple with crumble topping & melted chocolate"
-  }
-
-  {
-    :title "cinnamon buns"
   }
 
   {
@@ -418,7 +414,7 @@
   }
 
   {
-    :title "Victoria sponge"
+    :title "victoria sponge"
     :ingredients [
       ["300g self raising flour" "150g caster sugar" "50g light brown sugar" "⅔ tsp baking powder" "⅔ tsp bicarb"]
       ["267ml milk" "117ml (107gr) vegtable oil" "1⅓ tsp vanilla extract" "⅔ tbsp white wine vinegar"]
@@ -432,6 +428,24 @@
       the two tins."
       "Bake to good light golden colour in about 20 minutes. Let cool on rack before applying butter cream and jam."
       "For the butter cream, whisk the butter, icing sugar and vanilla extract until fluffy."
+    ]
+  }
+
+  {
+    :title "cinnamon rolls"
+    :ingredients [
+      ["240ml milk, room temperature" "57g melted butter" "25g caster sugar" "7g dried yeast" "300g plain flour" "1 tsp salt"]
+      ["45g plain flour" "&nbsp;" "85g butter" "82g dark brown sugar" "2 tbsp ground cinnamon"]
+      ["80g icing sugar" "2 tbsp milk" "½ tsp vanilla extract"]
+    ]
+    :method [
+      "Whisk together milk, melted butter and sugar. The mixture should be just warm. Sprinkle yeast and leave for one minute.
+       Add 300g of flour, and salt, and mix with wooden spoon until just combined. Cover bowl and leave to rise for 1 hour, until double in size."
+      "Grease a pie tin."
+      "Add remaining flour, 45g, and knead gently until smooth and non-sticky. 
+       Roll out the dough to rectangle about 1cm thick. Spread softened butter with sugar and cinnamon evenly over dough. Roll up the long side, forming a log.
+       Pinch seams closed and cut into seven or eight even pieces. Place on piece into centre, arrange rest around. Cover and leave to proof for about 30 minutes."
+      "Preheat oven to 180C. Bake rolls for about 25-30 minutes, until golden brown. While still warm, drizzle evenly with frosting."
     ]
   }
 ]
