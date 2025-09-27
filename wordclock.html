@@ -47,7 +47,7 @@
         const now = new Date()
         const min = now.getMinutes() - (now.getMinutes() % 5)
         const seg = min > 30 ? 60 - min : min
-        let hour = seg < 35 ? now.getHours() : now.getHours() + 1
+        let hour = min < 35 ? now.getHours() : now.getHours() + 1
         if (hour > 12) {
           hour -= 12
         }
