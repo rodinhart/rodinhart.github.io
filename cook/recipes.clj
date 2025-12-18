@@ -4,7 +4,7 @@
 
     :ingredients [
       ["175g butter" "150g chocolate" "75g cocoa powder" "1 tbsp espresso powder"]
-      ["275g granulate sugar" "70g dark brown sugar" "1½ tsp vanilla extract" "1½ tsp salt"]
+      ["275g granulate sugar" "70g dark brown sugar" "1½ tsp vanilla extract" "½ tsp salt"]
       ["4 large eggs" "50g plain flower"]
     ]
 
